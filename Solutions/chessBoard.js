@@ -1,3 +1,6 @@
+/*
+	Print a chessboard with height and width equal to provided size
+*/
 function chessBoard(size) {
 	var board = "";
 
