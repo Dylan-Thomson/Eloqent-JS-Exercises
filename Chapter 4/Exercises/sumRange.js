@@ -2,10 +2,6 @@ function range(start, end, step) {
 	if(arguments.length < 3) {
 		step = 1;
 	}
-	if(step == 0) {
-		return NaN;
-	}
-
 	var arr = [];
 	if(step < 0) {
 		for(var i = start; i >= end; i+=step) {
