@@ -1,5 +1,5 @@
-function prepend(el, list) {
-	return {value: el, rest: list};
+function prepend(value, list) {
+	return {value: value, rest: list};
 }
 
 function arrayToList(arr) {
@@ -8,4 +8,23 @@ function arrayToList(arr) {
 		list = prepend(arr[i], list);
 	}
 	return list;
+}
+
+function listToArray(list) {
+	var result = [];
+	while(list) {
+		result.push(list.value);
+		list = list.rest;
+	}
+	return result;
+}
+
+function nth(list, n) {
+	if(!list) {
+		return undefined;
+	}
+	if(n == 0) {
+		return list.value;
+	}
+	return nth(list.rest, n - 1);
 }
